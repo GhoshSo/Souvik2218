@@ -3,7 +3,9 @@ connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/views"
 include: "/Souvik_Dashboard_Issue.dashboard.lookml"
+include: "/views/users.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -41,11 +43,11 @@ explore: billion_orders {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: connection_reg_r3 {}
@@ -57,11 +59,11 @@ explore: dept {}
 explore: employees {}
 
 explore: events {
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${events.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: fakeorders {
@@ -71,11 +73,11 @@ explore: fakeorders {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: fatal_error_user_derived_base {}
@@ -91,11 +93,11 @@ explore: hundred_million_orders {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: hundred_million_orders_wide {
@@ -105,16 +107,15 @@ explore: hundred_million_orders_wide {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: incremental_pdts_test {}
 
-explore: ints {}
 
 explore: inventory_items {
   join: products {
@@ -125,11 +126,11 @@ explore: inventory_items {
 }
 
 explore: orders {
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: order_items {
@@ -145,11 +146,11 @@ explore: order_items {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 
   join: products {
     type: left_outer
@@ -171,11 +172,11 @@ explore: order_items_vijaya {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 
   join: products {
     type: left_outer
@@ -205,21 +206,21 @@ explore: salary {
 }
 
 explore: saralooker {
-  join: users {
-    type: left_outer
-    sql_on: ${saralooker.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${saralooker.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: schema_migrations {}
 
 explore: sindhu {
-  join: users {
-    type: left_outer
-    sql_on: ${sindhu.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${sindhu.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: ten_million_orders {
@@ -229,16 +230,16 @@ explore: ten_million_orders {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+  # join: users {
+  #   type: left_outer
+  #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #   relationship: many_to_one
+  # }
 }
 
 explore: test {}
 
-explore: users {}
+# explore: users {}
 
 
 
