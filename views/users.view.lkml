@@ -40,6 +40,7 @@ view: users {
     type: number
     sql: ${id}+${count} ;;
     html: <d>{{count._value}}</d> ;;
+  }
 
   dimension: city {
     type: string
