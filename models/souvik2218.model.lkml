@@ -1,5 +1,6 @@
 # Define the database connection to be used for this model.
 connection: "thelook"
+include: "/explores"
 
 # include all the views
 include: "/views/**/*.view"
@@ -52,6 +53,8 @@ explore: billion_orders {
 
 explore: connection_reg_r3 {}
 
+
+explore: mkb_derived {}
 
 
 explore: dept {}
@@ -112,20 +115,20 @@ explore: hundred_million_orders_wide {
   #   sql_on: ${orders.user_id} = ${users.id} ;;
   #   relationship: many_to_one
   # }
-}
-
-explore: incremental_pdts_test {}
+#}
 
 
-explore: inventory_items {
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-}
 
-explore: orders {
+
+# explore: inventory_items {
+#   join: products {
+#     type: left_outer
+#     sql_on: ${inventory_items.product_id} = ${products.id} ;;
+#     relationship: many_to_one
+#   }
+# }
+
+# explore: orders {
   # join: users {
   #   type: left_outer
   #   sql_on: ${orders.user_id} = ${users.id} ;;
@@ -133,18 +136,18 @@ explore: orders {
   # }
 }
 
-explore: order_items {
-  join: orders {
-    type: left_outer
-    sql_on: ${order_items.order_id} = ${orders.id} ;;
-    relationship: many_to_one
-  }
+# explore: order_items {
+#   join: orders {
+#     type: left_outer
+#     sql_on: ${order_items.order_id} = ${orders.id} ;;
+#     relationship: many_to_one
+#   }
 
-  join: inventory_items {
-    type: left_outer
-    sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
-    relationship: many_to_one
-  }
+#   join: inventory_items {
+#     type: left_outer
+#     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
+#     relationship: many_to_one
+#   }
 
   # join: users {
   #   type: left_outer
@@ -152,12 +155,12 @@ explore: order_items {
   #   relationship: many_to_one
   # }
 
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-}
+#   join: products {
+#     type: left_outer
+#     sql_on: ${inventory_items.product_id} = ${products.id} ;;
+#     relationship: many_to_one
+#   }
+# }
 
 explore: order_items_vijaya {
   join: orders {
